@@ -30,18 +30,21 @@ public class Student : Person
         this.name = nameStudent;
         this.lecture = lecture;
         isInLecture = lecture is not null;
-        int numberOfStudents = lecture.NumOfStudents;
         if (lecture != null)
         {
-            foreach (Student student in studentsAtLecture )
+            int numberOfStudents = lecture.NumOfStudents;
+            if (lecture != null)
             {
-                numberOfStudents++;
-                isInLecture = true;
+                foreach (Student student in studentsAtLecture )
+                {
+                    numberOfStudents++;
+                    isInLecture = true;
+                }
             }
-        }
 
-        Console.WriteLine($"Student {this.name} has joined {this.lecture}.");
-        Console.WriteLine($"{numberOfStudents} have joined {this.lecture}.");
+            Console.WriteLine($"Student {this.name} has joined {this.lecture}.");
+            Console.WriteLine($"{numberOfStudents} have joined {this.lecture}.");
+        }
     }
     public void Listen()
     {
@@ -86,13 +89,13 @@ public class Speaker : Person
             }
         }
     }
-    //The speaker changes the name of a lecture.
+    //The speaker changes the name of a lecture if isInLecture = true.
     public void Rename(Lecture? lecture, string? name, string nameSpeaker)
     {
         this.name = nameSpeaker;
-        if (lecture != null)
+        if (isInLecture)
         {
-            lecture.Name = name;
+            if (lecture != null) lecture.Name = name;
             Console.WriteLine($"Speaker {this.name} has changed the name of the lecture to {name}.");
         }
     }
