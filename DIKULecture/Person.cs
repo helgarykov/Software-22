@@ -2,84 +2,87 @@ using Microsoft.VisualBasic;
 
 namespace DIKULecture;
 
-public class Person : Lecture
+public class Person
 {
     private protected string name;
     private string occupation;
     private int age;
 
-    public Person(string name, string occupation, int age, bool information)
+    public Person(string name, string occupation, int age)
     {
         this.name = name;
         this.occupation = occupation;
         this.age = age;
-        this.information = information;
     }
 }
 
 public class Student : Person
 {
-    private bool isInLecture = false;
-    private Lecture lecture;
-
-    public void Join(Lecture lecture)
+    private bool isInLecture;
+    private Lecture? lecture;
+    //A student inherits the properties of its base class Person.
+    public Student(string name, string occupation, int age) : base(name, occupation, age)
     {
-        if (isInLecture == false)
-        {
-            this.lecture = lecture;
-            isInLecture = true;
-        }
-        else
-        {
-            this.lecture = null;
-            isInLecture = false;
-        }
     }
-    public void Listen(Lecture lecture, bool information)
+    //A student joins the lecture.
+    public void Join(Lecture? lecture, string name, string nameStudent)
     {
-        if (isInLecture == false)
+        this.name = nameStudent;
+        this.lecture = lecture;
+        isInLecture = lecture is not null;
+        Console.WriteLine($"Student {nameStudent} has joined {this.lecture}.");
+    }
+    public void Listen()
+    {
+        if (isInLecture)
         {
-            this.lecture = lecture;
-            this.information = true;
-            Console.WriteLine($"This student is currently listening to {this.lecture}.");
+            //A student gets information.
+            bool informed = lecture != null && lecture.Information;
+            Console.WriteLine($"It is {informed} that student {name} listens to the lecture.");
         }
         else
         {
-            this.lecture = null;
-            this.information = false;
-            Console.WriteLine($"The student is not listening to {this.lecture}.");
+            bool nonInformed = lecture is {Information: false};
+            Console.WriteLine($"Student {name} received information is {nonInformed}.");
         }
     }
 }
 
 public class Speaker : Person
 {
-    private bool isInLecture = false;
-    private Lecture lecture;
-
-    public void Broadcast(Lecture lecture, bool information)
+    private bool isInLecture;
+    private Lecture? lecture;
+    //A speaker inherits the properties of its base class Person.
+    public Speaker(string name, string occupation, int age) : base(name, occupation, age)
     {
-        if (isInLecture == false)
+    }
+    //The speaker joins the lecture.
+    public void Broadcast(Lecture? lecture)
+    {
+        this.lecture = lecture;
+        isInLecture = lecture is not null;
+        Console.WriteLine($"Speaker {name} has joined {this.lecture}.");
+    }
+    public void Speak(bool information)
+    {
+        if (isInLecture)
         {
-            this.lecture = lecture;
-            this.information = true;
-            Console.WriteLine($"Speaker is speaking at: {this.lecture}.");
-        }
-        else
-        {
-            this.lecture = null;
-            this.information = false;
-            Console.WriteLine($"Speaker is not speaking at: {this.lecture}.");
+            // The speaker sets information.
+            if (lecture != null)
+            {
+                lecture.Information = information;
+                Console.WriteLine($"Speaker {name} says {information} at {lecture}.");
+            }
         }
     }
-
-    public void Speak(string name, Lecture lecture, bool information)
+    //The speaker changes the name of a lecture.
+    public void Rename(Lecture? lecture, string? name, string nameSpeaker)
     {
-        if (isInLecture == false)
+        this.name = nameSpeaker;
+        if (lecture != null)
         {
-            this.lecture = lecture;
-            this.name = name;
-            Console.WriteLine($"Speaker begins a {this.lecture} called {this.name}");
+            lecture.Name = name;
+            Console.WriteLine($"Speaker {this.name} has changed the name of the lecture to {name}.");
         }
     }
 }

@@ -3,7 +3,7 @@ namespace DIKULecture;
 public class Lecture : ChatRoom
 {
     private int numOfStudentsOnline = 0;
-    private protected bool information;
+    private bool information;
 
     public bool Information
     {
@@ -11,13 +11,13 @@ public class Lecture : ChatRoom
         set { information = value; }
     }
 
-    public Lecture(string name)
+    public Lecture(string? name)
     {
         Name = name;
     }
 
     public override string ToString()
     {
-        return Name + " the current number of students: " + string.Format(numOfStudentsOnline.ToString());
+        return Name + "\n" + " The current number of students: " + string.Format(numOfStudentsOnline.ToString());
     }
 }
