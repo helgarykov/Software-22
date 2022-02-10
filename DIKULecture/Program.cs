@@ -18,6 +18,7 @@ namespace DIKULecture
             };
             
             Lecture lecture = new("DMA");
+            Lecture lectureTwo = new("PoP");
             Console.WriteLine(lecture);
 
             Student a = new("Ove", "student", 18);
@@ -39,6 +40,7 @@ namespace DIKULecture
             a.Listen();
             c.Listen();
             d.Listen();
+            
             
             
             

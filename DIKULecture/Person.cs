@@ -30,18 +30,18 @@ public class Student : Person
         this.name = nameStudent;
         this.lecture = lecture;
         isInLecture = lecture is not null;
+        int numberOfStudents = lecture.NumOfStudents;
         if (lecture != null)
         {
-            int numberOfStudents = lecture.NumOfStudents;
-
             foreach (Student student in studentsAtLecture )
             {
                 numberOfStudents++;
+                isInLecture = true;
             }
         }
 
-        Console.WriteLine($"Students {this.name} have joined {this.lecture}.");
-        Console.WriteLine($"\n + {string.Format(numberOfStudents.ToString())} have joined {this.lecture}.");
+        Console.WriteLine($"Student {this.name} has joined {this.lecture}.");
+        Console.WriteLine($"{numberOfStudents} have joined {this.lecture}.");
     }
     public void Listen()
     {
