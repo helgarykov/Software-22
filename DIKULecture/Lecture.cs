@@ -11,6 +11,8 @@ public class Lecture : ChatRoom
         set { information = value; }
     }
 
+    public int NumOfStudents { get; }
+
     public Lecture(string? name)
     {
         Name = name;

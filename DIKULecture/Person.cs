@@ -5,8 +5,8 @@ namespace DIKULecture;
 public class Person
 {
     private protected string name;
-    private string occupation;
-    private int age;
+    protected string occupation;
+    private protected int age;
 
     public Person(string name, string occupation, int age)
     {
@@ -25,12 +25,23 @@ public class Student : Person
     {
     }
     //A student joins the lecture.
-    public void Join(Lecture? lecture, string name, string nameStudent)
+    public void Join(Lecture? lecture, string name, string nameStudent, List<Student> studentsAtLecture)
     {
         this.name = nameStudent;
         this.lecture = lecture;
         isInLecture = lecture is not null;
-        Console.WriteLine($"Student {nameStudent} has joined {this.lecture}.");
+        if (lecture != null)
+        {
+            int numberOfStudents = lecture.NumOfStudents;
+
+            foreach (Student student in studentsAtLecture )
+            {
+                numberOfStudents++;
+            }
+        }
+
+        Console.WriteLine($"Students {this.name} have joined {this.lecture}.");
+        Console.WriteLine($"\n + {string.Format(numberOfStudents.ToString())} have joined {this.lecture}.");
     }
     public void Listen()
     {

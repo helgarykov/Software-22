@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using System.Runtime.CompilerServices;
+using Microsoft.VisualBasic;
 
 namespace DIKULecture
 {
@@ -6,16 +7,30 @@ namespace DIKULecture
     {
         static void Main(string[] args)
         {
-            Lecture lecture = new Lecture("DMA");
+            List<Student> studentsAtLecture = new List<Student>()
+            {
+               new Student("Ove", "student", 18),
+               new Student("Tove", "student", 22),
+               new Student("Marie", "student", 30),
+               new Student("Carla", "student", 18),
+               new Student("Emil", "student", 26),
+               new Student("Waldemar", "student", 18),
+            };
+            
+            Lecture lecture = new("DMA");
             Console.WriteLine(lecture);
 
-            Student a = new Student("Ove", "student", 18);
-            Student c = new Student("Tove", "student", 22);
-            Student d = new Student("Marie", "student", 30);
-            Speaker b = new Speaker("Boris", "teacher", 45);
-            a.Join(lecture, "DMA", "Ove");
-            c.Join(lecture, "DMA", "Tove");
-            d.Join(lecture, "DMA", "Marie");
+            Student a = new("Ove", "student", 18);
+            Student c = new("Tove", "student", 22);
+            Student d = new("Marie", "student", 30);
+            Student e = new("Carla", "student", 18);
+            Student f = new("Emil", "student", 26);
+            Speaker b = new("Boris", "teacher", 45);
+            
+            a.Join(lecture, "DMA", "Ove", studentsAtLecture);
+            c.Join(lecture, "DMA", "Tove", studentsAtLecture);
+            d.Join(lecture, "DMA", "Marie", studentsAtLecture);
+            e.Join(lecture, "DMA", "Carla", studentsAtLecture);
 
             b.Broadcast(lecture);
             b.Speak(true);
@@ -24,6 +39,8 @@ namespace DIKULecture
             a.Listen();
             c.Listen();
             d.Listen();
+            
+            
             
 
 
