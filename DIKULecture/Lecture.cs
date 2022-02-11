@@ -11,7 +11,7 @@ public class Lecture : ChatRoom
         set { information = value; }
     }
 
-    public int NumOfStudents { get; }
+    public int NumOfStudents { get; set; }
 
     public Lecture(string? name)
     {
@@ -20,6 +20,6 @@ public class Lecture : ChatRoom
 
     public override string ToString()
     {
-        return Name + "\n" + " The current number of students: " + string.Format(numOfStudentsOnline.ToString());
+        return string.Format(Name + " " + numOfStudentsOnline);
     }
 }

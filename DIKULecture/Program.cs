@@ -40,13 +40,6 @@ namespace DIKULecture
             a.Listen();
             c.Listen();
             d.Listen();
-            
-            
-            
-            
-
-
-
         }
     }
 }

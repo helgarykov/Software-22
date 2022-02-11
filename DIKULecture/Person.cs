@@ -32,20 +32,16 @@ public class Student : Person
         isInLecture = lecture is not null;
         if (lecture != null)
         {
-            int numberOfStudents = lecture.NumOfStudents;
-            if (lecture != null)
+            foreach (Student student in studentsAtLecture )
             {
-                foreach (Student student in studentsAtLecture )
-                {
-                    numberOfStudents++;
-                    isInLecture = true;
-                }
+                lecture.NumOfStudents++; // Updates the field numOfStudents
+                isInLecture = true;
             }
-
-            Console.WriteLine($"Student {this.name} has joined {this.lecture}.");
-            Console.WriteLine($"{numberOfStudents} have joined {this.lecture}.");
         }
+        Console.WriteLine($"Student {this.name} has joined {this.lecture}.");
+        if (lecture != null) Console.WriteLine($"In all, {lecture.NumOfStudents} students have joined {this.lecture}.");
     }
+
     public void Listen()
     {
         if (isInLecture)
