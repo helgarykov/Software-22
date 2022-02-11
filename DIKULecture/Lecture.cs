@@ -11,7 +11,11 @@ public class Lecture : ChatRoom
         set { information = value; }
     }
 
-    public int NumOfStudents { get; set; }
+    public int NumOfStudents
+    {
+        get { return numOfStudentsOnline; }
+        set { numOfStudentsOnline = value; }
+    }
 
     public Lecture(string? name)
     {

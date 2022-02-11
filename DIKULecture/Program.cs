@@ -7,16 +7,6 @@ namespace DIKULecture
     {
         static void Main(string[] args)
         {
-            List<Student> studentsAtLecture = new List<Student>()
-            {
-               new Student("Ove", "student", 18),
-               new Student("Tove", "student", 22),
-               new Student("Marie", "student", 30),
-               new Student("Carla", "student", 18),
-               new Student("Emil", "student", 26),
-               new Student("Waldemar", "student", 18),
-            };
-            
             Lecture lecture = new("DMA");
             Lecture lectureTwo = new("PoP");
             Console.WriteLine(lecture);
@@ -30,16 +20,16 @@ namespace DIKULecture
             
             Speaker b = new("Boris", "teacher", 45);
             
-            a.Join(lecture, "DMA", "Ove", studentsAtLecture);
-            c.Join(lecture, "DMA", "Tove", studentsAtLecture);
-            d.Join(lecture, "DMA", "Marie", studentsAtLecture);
-            e.Join(lecture, "DMA", "Carla", studentsAtLecture);
-            f.Join(lecture, "DMA", "Emil", studentsAtLecture);
-            g.Join(lecture, "DMA", "Waldemar", studentsAtLecture);
+            a.Join(lecture, "Ove");
+            c.Join(lecture, "Tove");
+            d.Join(lecture, "Marie");
+            e.Join(lecture, "Carla");
+            f.Join(lecture, "Emil");
+            g.Join(lecture, "Waldemar");
             
             b.Broadcast(lecture);
             b.Speak(true);
-            b.Rename(lecture, "PoP", "Boris");
+            b.Rename("PoP");
 
             a.Listen();
             c.Listen();

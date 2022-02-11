@@ -25,7 +25,7 @@ public class Student : Person
     {
     }
     //A student joins the lecture.
-    public void Join(Lecture? lecture, string name, string nameStudent, List<Student> studentsAtLecture)
+    public void Join(Lecture? lecture, string nameStudent)
     {
         this.name = nameStudent;
         this.lecture = lecture;
@@ -83,13 +83,12 @@ public class Speaker : Person
         }
     }
     //The speaker changes the name of a lecture if isInLecture = true.
-    public void Rename(Lecture? lecture, string? name, string nameSpeaker)
+    public void Rename(string? name)
     {
-        this.name = nameSpeaker;
+        if (lecture != null) lecture.Name = name;
         if (isInLecture)
         {
-            if (lecture != null) lecture.Name = name;
-            Console.WriteLine($"Speaker {this.name} has changed the name of the lecture to {name}.");
+            Console.WriteLine($"Speaker has changed the name of the lecture to {name}.");
         }
     }
 }
