@@ -26,13 +26,17 @@ namespace DIKULecture
             Student d = new("Marie", "student", 30);
             Student e = new("Carla", "student", 18);
             Student f = new("Emil", "student", 26);
+            Student g = new("Waldemar", "student", 18);
+            
             Speaker b = new("Boris", "teacher", 45);
             
             a.Join(lecture, "DMA", "Ove", studentsAtLecture);
             c.Join(lecture, "DMA", "Tove", studentsAtLecture);
             d.Join(lecture, "DMA", "Marie", studentsAtLecture);
             e.Join(lecture, "DMA", "Carla", studentsAtLecture);
-
+            f.Join(lecture, "DMA", "Emil", studentsAtLecture);
+            g.Join(lecture, "DMA", "Waldemar", studentsAtLecture);
+            
             b.Broadcast(lecture);
             b.Speak(true);
             b.Rename(lecture, "PoP", "Boris");
@@ -40,6 +44,9 @@ namespace DIKULecture
             a.Listen();
             c.Listen();
             d.Listen();
+            e.Listen();
+            f.Listen();
+            g.Listen();
         }
     }
 }

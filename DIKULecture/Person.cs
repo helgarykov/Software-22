@@ -32,14 +32,11 @@ public class Student : Person
         isInLecture = lecture is not null;
         if (lecture != null)
         {
-            foreach (Student student in studentsAtLecture )
-            {
-                lecture.NumOfStudents++; // Updates the field numOfStudents
-                isInLecture = true;
-            }
+            lecture.NumOfStudents++; // Updates the field numOfStudents
+            isInLecture = true;
+            Console.WriteLine($"Student {this.name} has joined the lecture.");
+            Console.WriteLine($"In all, {lecture.NumOfStudents} students have joined the lecture.");
         }
-        Console.WriteLine($"Student {this.name} has joined {this.lecture}.");
-        if (lecture != null) Console.WriteLine($"In all, {lecture.NumOfStudents} students have joined {this.lecture}.");
     }
 
     public void Listen()
@@ -71,7 +68,7 @@ public class Speaker : Person
     {
         this.lecture = lecture;
         isInLecture = lecture is not null;
-        Console.WriteLine($"Speaker {name} has joined {this.lecture}.");
+        Console.WriteLine($"\n Speaker {name} has joined the lecture.");
     }
     public void Speak(bool information)
     {
@@ -81,7 +78,7 @@ public class Speaker : Person
             if (lecture != null)
             {
                 lecture.Information = information;
-                Console.WriteLine($"Speaker {name} says {information} at {lecture}.");
+                Console.WriteLine($"Speaker {name} speaks {information} at the lecture.");
             }
         }
     }

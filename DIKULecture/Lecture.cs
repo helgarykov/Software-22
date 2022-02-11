@@ -20,6 +20,6 @@ public class Lecture : ChatRoom
 
     public override string ToString()
     {
-        return string.Format(Name + " " + numOfStudentsOnline);
+        return string.Format("\n" + Name + " is currently attended by " + NumOfStudents + " students");
     }
 }
