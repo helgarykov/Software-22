@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using Microsoft.VisualBasic;
+using System;
 
 namespace DIKULecture
 {
