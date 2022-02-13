@@ -4,9 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Fundamentals fundamentals = new Fundamentals();
-            
-            fundamentals.CountBackwards();
+            Fundamentals countBackwords = new Fundamentals();
+
+            countBackwords.CountBackwards();
+
+            Fundamentals reversed = new Fundamentals();
+            string str = "stressed :(";
+            reversed.ReverseString(str);
         }
     }
 }
