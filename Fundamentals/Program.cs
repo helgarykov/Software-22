@@ -4,13 +4,20 @@
     {
         static void Main(string[] args)
         {
-            Fundamentals countBackwords = new Fundamentals();
+            Fundamentals countBackwards = new Fundamentals();
 
-            countBackwords.CountBackwards();
+            countBackwards.CountBackwards();
 
             Fundamentals reversed = new Fundamentals();
-            string str = "stressed :(";
-            reversed.ReverseString(str);
+            Console.Write("The reversed output: ");
+            Console.Write(reversed.ReverseString("stressed :("));
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Fundamentals remainder = new Fundamentals();
+            Console.WriteLine(remainder.GCD(13, 31));
+            Console.WriteLine();
+            Console.WriteLine(remainder.GCD(-99, 4345));
         }
     }
 }

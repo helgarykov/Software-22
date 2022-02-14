@@ -16,29 +16,34 @@ public class Fundamentals
         Console.WriteLine();
         Console.WriteLine("Returns: Nothing. The return type is void.");
         Console.WriteLine();
-        Console.Write("The reversed output ");
     }
-    
     // Recursive function is a pure function and does not return anything
     // else than what is conditioned by the input.
-    public void ReverseString(string word)
+    public string ReverseString(string word)
     {
         if (word.Length <= 1)
         {
-            Console.Write(word);
+            return word;
         }
         else
         {
-            // Prints out the original string in a reversed order;
-            // starts with the last char and prints chars out one by one.
+            // Prints out the original string in a reversed order.
+            // Starts with the last char and prints them out one by one.
+            // The first char printed out in "stressed :(" is "(".
             Console.Write(word[word.Length - 1]);
             // First round: Takes the char that corresponds to the one printed out above
-            // and cuts it off the original string.
+            // and cuts it off the original string. The first char cut off is "(".
             // Second round: Adds chars one by one, starting from index [1] and to
-            // [word.Length - 1]. The final result == the original string.
+            // [word.Length - 1]. The final string == the original string.
             ReverseString(word.Substring(0,(word.Length - 1)));
+            return null!;
         }
     }
-
+    public int GCD(int a, int b)
+    {
+        if (a == 0 && b == 0) return 0;
+        int r = a % b;
+        if (r == 0) return Math.Abs(b);
+        return GCD(b, r);
+    }
 }
-
