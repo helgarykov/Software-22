@@ -3,7 +3,7 @@ namespace DIKUDebate;
 public class DIKUPerson
 {
     private protected Random random = new Random();
-    private string name { get; }
+    private DIKUPerson name { get; set; }
     private protected int maxIntellect { get; set; }
     private protected int intellect { get; set; }
     private protected int strengthOfArgument{ get; set; }
@@ -41,4 +41,14 @@ public class DIKUPerson
         return true;
     }
 
+    public void Argue(DIKUPerson opponent)
+    {
+        if (criticalArgument > random.Next(0, 100))
+        {
+            strengthOfArgument *= 2;
+        }
+        Console.WriteLine("DIKUPerson 1 performs an attack action on other DIKUPerson.");
+        Console.WriteLine($"DIKUPerson {name} strikes an argument at DIKUPerson {this.name} for 5 points of draining." );
+        opponent.beDrained(5);
+    }
 }
