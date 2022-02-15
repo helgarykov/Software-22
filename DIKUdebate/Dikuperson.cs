@@ -1,9 +1,8 @@
-using System.Runtime.InteropServices.ComTypes;
+namespace DIKUDebate;
 
-namespace DIKUClassroom;
-
-public class DIKUperson
+public class DIKUPerson
 {
+    private protected Random random = new Random();
     private string name { get; }
     private protected int maxIntellect { get; set; }
     private protected int intellect { get; set; }
@@ -13,14 +12,33 @@ public class DIKUperson
     private protected int criticalArgument { get; set; }
     private Preparation preparation { get; set; }
 
-    public DIKUperson(string name)
+    public DIKUPerson(string name)
     {
         this.name = name;
     }
-    
-    //Prints the objects as a string.
+    //Prints objects as a string.
     public override string ToString()
     {
         return string.Format(name + " " + preparation + " " + semester + " " + intellect);
     }
+
+    public virtual bool hasLost()
+    {
+        if (intellect <= 0) return true;
+        return false;
+    }
+
+    public virtual bool beDrained(int amount)
+    {
+        if (counterArgument > random.Next(0, 100))
+        {
+            intellect += amount;
+            Console.WriteLine("I successfully counted the argument and increased ny intellect by the given points.");
+            return false;
+        }
+        intellect -= amount;
+        Console.WriteLine("I failed to counter the argument and decreased ny intellect by the given points.");
+        return true;
+    }
+
 }

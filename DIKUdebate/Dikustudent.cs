@@ -1,8 +1,8 @@
-namespace DIKUClassroom;
+namespace DIKUDebate;
 
-public class DIKUstudent : DIKUperson
+public class DIKUStudent : DIKUPerson
 {
-    public DIKUstudent(string name) : base(name)
+    public DIKUStudent(string name) : base(name)
     {
         this.intellect = 30;
         this.maxIntellect = 10;

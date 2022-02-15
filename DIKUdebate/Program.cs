@@ -1,15 +1,20 @@
-﻿namespace DIKUClassroom;
+﻿namespace DIKUDebate;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        DIKUperson person = new("Laust");
+        DIKUPerson person = new("Laust");
         Console.WriteLine("The person is " + person);
-        DIKUstudent uffe = new DIKUstudent("Uffe");
+        DIKUStudent uffe = new DIKUStudent("Uffe");
         Console.WriteLine("The person is " + uffe);
-        DIKUprofessor boris = new DIKUprofessor("Boris");
+        DIKUProfessor boris = new DIKUProfessor("Boris");
         Console.WriteLine("The professor is " + boris);
+        uffe.hasLost();
+        boris.hasLost();
+        uffe.beDrained(5);
+        boris.beDrained(100);
+
     }
 
 }

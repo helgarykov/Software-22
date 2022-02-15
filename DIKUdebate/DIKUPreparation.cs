@@ -1,4 +1,4 @@
-namespace DIKUClassroom;
+namespace DIKUDebate;
 
 public enum Preparation
 {
