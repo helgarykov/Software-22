@@ -27,4 +27,9 @@ public class DIKUProfessor : DIKUPerson
         Console.WriteLine("I am the professor and will always win an argument.");
         return false;
     }
+
+    public override void GetExperience()
+    {
+        Console.WriteLine($"Professor {name} have finished his degree, he cannot be greater.");
+    }
 }

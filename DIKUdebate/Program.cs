@@ -8,6 +8,7 @@ public class Program
         Console.WriteLine("The person is " + person);
         DIKUStudent uffe = new DIKUStudent("Uffe");
         Console.WriteLine("The person is " + uffe);
+        DIKUStudent marianne = new DIKUStudent("Marianne");
         
         
         DIKUProfessor boris = new DIKUProfessor("Boris");
@@ -18,7 +19,10 @@ public class Program
         uffe.beDrained(5);
         boris.beDrained(100);
         
-        uffe.Argue(boris);
+        boris.Argue(uffe);
+        marianne.Argue(uffe);
+        boris.GetExperience();
+        uffe.GetExperience();
         
 
     }

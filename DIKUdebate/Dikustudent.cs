@@ -11,5 +11,10 @@ public class DIKUStudent : DIKUPerson
         this.counterArgument = 10;
         this.criticalArgument = 10;
     }
+
+    public override void GetExperience()
+    {
+        semester++;
+    }
 }
 
