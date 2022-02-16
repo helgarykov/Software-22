@@ -30,14 +30,12 @@ public class DIKUPerson
 
     public virtual bool beDrained(int amount)
     {
-        if (counterArgument > random.Next(0, 100))
+        while (counterArgument > random.Next(0, 100))
         {
             intellect += amount;
-            //Console.WriteLine("I successfully counted the argument and increased ny intellect by the given points.");
+            Console.WriteLine($"{name} succeeded to counter the argument and decreased the intellect by {amount} points.");
             return false;
         }
-        intellect -= amount;
-        //Console.WriteLine($"{name} failed to counter the argument and decreased the intellect by {amount} points.");
         return true;
     }
 

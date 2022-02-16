@@ -21,7 +21,7 @@ public class DIKUProfessor : DIKUPerson
         if (counterArgument < random.Next(0, 100))
         {
             intellect /= amount;
-            Console.WriteLine("I couldn't counter the argument and have been drastically drained of intellect.");
+            Console.WriteLine($"Professor {name} couldn't counter the argument and have been drastically drained of intellect.");
             return true;
         }
         Console.WriteLine("I am the professor and will always win an argument.");
