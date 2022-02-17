@@ -1,15 +1,15 @@
 namespace DIKUDebate;
 
-public class DIKUStudent : DIKUPerson
+public class DIKUStudent : DikuPerson
 {
-    public DIKUStudent(string name) : base(name)
+    public DIKUStudent(string name, Preparation preparation) : base(name, preparation)
     {
-        intellect = 30;
-        maxIntellect = 30;
-        strengthOfArgument = 3;
-        semester = 1;
-        counterArgument = 10;
-        criticalArgument = 10;
+        Intellect = 30;
+        MaxIntellect = 30;
+        StrengthOfArgument = 3;
+        Semester = 1;
+        CounterArgument = 10;
+        CriticalArgument = 10;
     }
 }
 

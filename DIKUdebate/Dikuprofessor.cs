@@ -1,27 +1,28 @@
 namespace DIKUDebate;
 
-public class DIKUProfessor : DIKUPerson
+public class DIKUProfessor : DikuPerson
 {
-    public DIKUProfessor(string name) : base(name)
+    public DIKUProfessor(string name, Preparation preparation) : base(name, preparation)
     {
-        maxIntellect = 10000;
-        intellect = 10000;
-        strengthOfArgument = 10000;
-        counterArgument = 10000;
-        criticalArgument = 10000;
+        MaxIntellect = 10000;
+        Intellect = 10000;
+        StrengthOfArgument = 10000;
+        CounterArgument = 10000;
+        CriticalArgument = 10000;
     }
 
-    public override bool hasLost()
+    public override bool HasLost()
     {
-        Console.WriteLine("I can not lose!");
-        return false;
+        Console.WriteLine($"I am {Name} and can not lose! Muhaha!");
+            return false;
     }
-    public override bool beDrained(int amount)
+
+    protected override bool BeDrained(int amount)
     {
-        if (counterArgument < random.Next(0, 100))
+        if (CounterArgument < Random.Next(0, 100))
         {
-            intellect /= amount;
-            Console.WriteLine($"Professor {name} couldn't counter the argument and have been drastically drained of intellect.");
+            Intellect /= amount;
+            Console.WriteLine($"{Name} couldn't counter the argument and have been drastically drained of intellect.");
             return true;
         }
         Console.WriteLine("I am the professor and will always win an argument.");
@@ -30,6 +31,6 @@ public class DIKUProfessor : DIKUPerson
 
     public override void GetExperience()
     {
-        Console.WriteLine($"Professor {name} have finished his degree, he cannot be greater.");
+        Console.WriteLine($"{Name} has finished his degree, he cannot be greater.");
     }
 }

@@ -1,72 +1,75 @@
-using System;
 namespace DIKUDebate;
 
-public class DIKUPerson
+public class DikuPerson
 {
-    private protected Random random = new Random();
-    private protected string name { get; set; }
-    private protected int maxIntellect { get; set; }
-    private protected int intellect { get; set; }
-    private protected int strengthOfArgument{ get; set; }
-    private protected int semester { get; set; }
-    private protected int counterArgument { get; set; }
-    private protected int criticalArgument { get; set; }
-    private Preparation preparation { get; set; }
+    private protected readonly Random Random = new Random();
+    // Can be read and overwritten by itself and its subclasses.
+    private protected string Name { get; set; }
+    private protected int MaxIntellect { get; set; }
+    private protected int Intellect { get; set; }
+    private protected int StrengthOfArgument{ get; set; }
+    private protected int Semester { get; set; }
+    private protected int CounterArgument { get; set; }
+    private protected int CriticalArgument { get; set; }
+    // Can be read and overwritten by itself only.
+    private Preparation Preparation { get; }
 
-    public DIKUPerson(string name)
+    protected DikuPerson(string name, Preparation preparation)
     {
-        this.name = name;
+        Name = name;
+        Preparation = preparation;
     }
     //Prints objects as a string.
     public override string ToString()
     {
-        return string.Format(name + " " + preparation + " " + intellect);
+        return string.Format(Name + " who is " + Preparation + " with intellect " + Intellect);
     }
 
-    public virtual bool hasLost()
+    public virtual bool HasLost()
     {
-        if (intellect <= 0) return true;
+        if (Intellect <= 0) return true;
         return false;
     }
 
-    public virtual bool beDrained(int amount)
+    protected virtual bool BeDrained(int amount)
     {
-        if (!(counterArgument > random.Next(0, 100)))
+        if (!(CounterArgument > Random.Next(0, 100)))
         {
-            intellect -= amount;
+            Intellect -= amount;
             return true;
         }
-        Console.WriteLine($"{name} succeeded to counter the argument.");
+        Console.WriteLine($"{Name} succeeded to counter the argument.");
         return false;
     }
 
-    public void Argue(DIKUPerson opponent)
+    public void Argue(DikuPerson opponent)
     {
-        Console.WriteLine($"DIKUPerson {name} strikes an argument at DIKUPerson {opponent.name} for {strengthOfArgument} points of draining.");
-        if (criticalArgument > random.Next(0, 100))
+        Console.WriteLine($"DikuPerson {Name} ({Preparation}) strikes an argument at DikuPerson {opponent.Name} ({opponent.Preparation}) for {StrengthOfArgument} points of draining.");
+        if (CriticalArgument > Random.Next(0, 100))
         {
-            strengthOfArgument += 2;
-            opponent.intellect -= strengthOfArgument;
-            opponent.beDrained(strengthOfArgument);
-            Console.WriteLine($"DIKUPerson {opponent.name} lost the argument for {strengthOfArgument} points of draining.");
+            StrengthOfArgument += 2;
+            opponent.Intellect -= StrengthOfArgument;
+            opponent.BeDrained(StrengthOfArgument);
+            Console.WriteLine($"DikuPerson {opponent.Name} lost the argument for {StrengthOfArgument} points of draining.");
+            Console.WriteLine();
             return;
         }
-        opponent.intellect -= strengthOfArgument;
+        opponent.Intellect -= StrengthOfArgument;
         opponent.GetExperience();
+        Console.WriteLine($"{opponent.Name} managed to counter the argument.");
         Console.WriteLine();
-        Console.WriteLine($"{opponent.name} managed to counter the argument.");
     }
 
     public virtual void GetExperience()
     {
-        semester++;
-        strengthOfArgument += 2;
-        if (preparation is Preparation.ReadingAll or Preparation.ReadingSome) maxIntellect += 10;
-        if (preparation == Preparation.ReadingNone) maxIntellect += 20;
-        if (preparation == Preparation.ReadingNone) counterArgument += 3;
-        if (preparation is Preparation.ReadingAll or Preparation.ReadingSome) counterArgument += 6;
-        if (preparation == Preparation.ReadingAll) criticalArgument += 6;
-        if (preparation is Preparation.ReadingNone or Preparation.ReadingSome) criticalArgument += 3;
-        intellect = maxIntellect;
+        Semester++;
+        StrengthOfArgument += 2;
+        if (Preparation is Preparation.ReadingAll or Preparation.ReadingSome) MaxIntellect += 10;
+        if (Preparation == Preparation.ReadingNone) MaxIntellect += 20;
+        if (Preparation == Preparation.ReadingNone) CounterArgument += 3;
+        if (Preparation is Preparation.ReadingAll or Preparation.ReadingSome) CounterArgument += 6;
+        if (Preparation == Preparation.ReadingAll) CriticalArgument += 6;
+        if (Preparation is Preparation.ReadingNone or Preparation.ReadingSome) CriticalArgument += 3;
+        Intellect = MaxIntellect;
     }
 }
