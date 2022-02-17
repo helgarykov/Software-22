@@ -1,4 +1,5 @@
-﻿namespace DIKUDebate;
+﻿using System;
+namespace DIKUDebate;
 
 public class Program
 {
@@ -9,6 +10,7 @@ public class Program
         DIKUStudent uffe = new DIKUStudent("Uffe");
         Console.WriteLine("The person is " + uffe);
         DIKUStudent marianne = new DIKUStudent("Marianne");
+        DIKUStudent sonja = new DIKUStudent("Sonja");
         
         
         DIKUProfessor boris = new DIKUProfessor("Boris");
@@ -16,13 +18,14 @@ public class Program
         DIKUPerson opponent = new DIKUPerson("Liva");
         uffe.hasLost();
         boris.hasLost();
-        uffe.beDrained(5);
-        boris.beDrained(100);
+        uffe.beDrained(100);
+        boris.beDrained(10);
         
-        boris.Argue(uffe);
-        marianne.Argue(uffe);
-        boris.GetExperience();
-        uffe.GetExperience();
+       // boris.Argue(uffe);
+        //marianne.Argue(uffe);
+        marianne.Argue(sonja);
+        //boris.GetExperience();
+        //uffe.GetExperience();
         
 
     }

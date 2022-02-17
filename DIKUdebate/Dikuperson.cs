@@ -1,3 +1,4 @@
+using System;
 namespace DIKUDebate;
 
 public class DIKUPerson
@@ -19,7 +20,7 @@ public class DIKUPerson
     //Prints objects as a string.
     public override string ToString()
     {
-        return string.Format(name + " " + preparation + " " + semester + " " + intellect);
+        return string.Format(name + " " + preparation + " " + intellect);
     }
 
     public virtual bool hasLost()
@@ -30,37 +31,42 @@ public class DIKUPerson
 
     public virtual bool beDrained(int amount)
     {
-        while (counterArgument > random.Next(0, 100))
+        if (!(counterArgument > random.Next(0, 100)))
         {
-            intellect += amount;
-            Console.WriteLine($"{name} succeeded to counter the argument and decreased the intellect by {amount} points.");
-            return false;
+            intellect -= amount;
+            return true;
         }
-        return true;
+        Console.WriteLine($"{name} succeeded to counter the argument.");
+        return false;
     }
 
     public void Argue(DIKUPerson opponent)
     {
-        Console.WriteLine($"DIKUPerson {name} strikes an argument at DIKUPerson {opponent.name} for {strengthOfArgument} points of draining." );
+        Console.WriteLine($"DIKUPerson {name} strikes an argument at DIKUPerson {opponent.name} for {strengthOfArgument} points of draining.");
         if (criticalArgument > random.Next(0, 100))
         {
-            strengthOfArgument *= 2;
+            strengthOfArgument += 2;
             opponent.intellect -= strengthOfArgument;
             opponent.beDrained(strengthOfArgument);
+            Console.WriteLine($"DIKUPerson {opponent.name} lost the argument for {strengthOfArgument} points of draining.");
+            return;
         }
+        opponent.intellect -= strengthOfArgument;
         opponent.GetExperience();
-        Console.WriteLine($"{opponent.name} has won the argument over {name} and got experience.");
+        Console.WriteLine();
+        Console.WriteLine($"{opponent.name} managed to counter the argument.");
     }
 
     public virtual void GetExperience()
     {
-        strengthOfArgument *= 2;
-        if (preparation == Preparation.ReadingAll && preparation == Preparation.ReadingSome) maxIntellect *= 10;
-        if (preparation == Preparation.ReadingNone) maxIntellect *= 20;
-        if (preparation == Preparation.ReadingNone) counterArgument *= 3;
-        if (preparation == Preparation.ReadingAll && preparation == Preparation.ReadingSome) counterArgument *= 6;
-        if (preparation == Preparation.ReadingAll) criticalArgument *= 6;
-        if (preparation == Preparation.ReadingNone && preparation == Preparation.ReadingSome) criticalArgument *= 3;
+        semester++;
+        strengthOfArgument += 2;
+        if (preparation is Preparation.ReadingAll or Preparation.ReadingSome) maxIntellect += 10;
+        if (preparation == Preparation.ReadingNone) maxIntellect += 20;
+        if (preparation == Preparation.ReadingNone) counterArgument += 3;
+        if (preparation is Preparation.ReadingAll or Preparation.ReadingSome) counterArgument += 6;
+        if (preparation == Preparation.ReadingAll) criticalArgument += 6;
+        if (preparation is Preparation.ReadingNone or Preparation.ReadingSome) criticalArgument += 3;
         intellect = maxIntellect;
     }
 }
