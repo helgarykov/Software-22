@@ -1,3 +1,5 @@
+using System;
+
 namespace DIKUDebate;
 
 public class DikuPerson
@@ -11,7 +13,7 @@ public class DikuPerson
     private protected int Semester { get; set; }
     private protected int CounterArgument { get; set; }
     private protected int CriticalArgument { get; set; }
-    // Can be read and overwritten by itself only.
+    // Can be read and overwritten only by itself.
     private Preparation Preparation { get; }
 
     protected DikuPerson(string name, Preparation preparation)

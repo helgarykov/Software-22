@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace DIKUDebate
 {
 
@@ -41,6 +44,12 @@ namespace DIKUDebate
                 List<DikuPerson> winners = new List<DikuPerson>();
                 while (debateParticipants.Count > 1)
                 {
+                    // Takes the the first 2 elements in a list.
+                    // After they have been removed on line 53, 54,
+                    // Starts at looking at the first 2 elements in the remaining list.
+                    // While runs as long as the 2 if conditions are not true.
+                    // First if is run when only one element is left in list debateParticipants.
+                    // Second if is run when the list debateParticipants is empty.
                     var p1 = debateParticipants[0];
                     var p2 = debateParticipants[1];
                     winners.Add(Discuss(p1, p2));
@@ -49,7 +58,7 @@ namespace DIKUDebate
 
                     if (debateParticipants.Count == 1 && winners.Count > 0)
                     {
-                        winners.Add((debateParticipants[0]));
+                        winners.Add(debateParticipants[0]);
                         round++;
                         return RunDebate(winners);
                     }

@@ -1,4 +1,6 @@
-﻿namespace DIKUDebate
+﻿using System.Collections.Generic;
+
+namespace DIKUDebate
 {
     namespace System.Collections.Generic
     {
@@ -25,7 +27,8 @@
                     sonja,
                     liva,
                     martin,
-                    elise
+                    elise,
+                    boris,
                 };
 
                 classroom.RunDebate(debateParticipants);

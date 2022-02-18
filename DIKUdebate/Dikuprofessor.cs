@@ -1,3 +1,5 @@
+using System;
+
 namespace DIKUDebate;
 
 public class DIKUProfessor : DikuPerson
