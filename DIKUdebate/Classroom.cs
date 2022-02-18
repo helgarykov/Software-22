@@ -1,42 +1,65 @@
-namespace DIKUDebate;
-
-public class Classroom
+namespace DIKUDebate
 {
-    public DikuPerson? Discuss(DikuPerson person1, DikuPerson person2)
+
+    namespace System.Collections.Generic
     {
-        Console.WriteLine("Debate til drained!");
-        int round = 1;
-        DikuPerson current = person1;
-        DikuPerson inactive = person2;
-        // Argue until someone is too drained
-        // of Intellect to keep on.
-        while (!person1.HasLost() && !person2.HasLost())
+        public class Classroom
         {
-            Console.WriteLine($"Round: {round}.");
-            current.Argue(inactive);
-            // Switching them , such that the
-            // inactive student is current and can argue back!
-            (current, inactive) = (inactive, current);
-            round++;
-        }
+            public DikuPerson Discuss(DikuPerson person1, DikuPerson person2)
+            {
+                Console.WriteLine("Debate til drained!");
+                var round = 1;
+                var current = person1;
+                var inactive = person2;
+                // Argue until someone is too drained
+                // of Intellect to keep on.
+                while (!person1.HasLost() && !person2.HasLost())
+                {
+                    Console.WriteLine($"Round: {round}.");
+                    current.Argue(inactive);
+                    // Switching them , such that the
+                    // inactive student is current and can argue back!
+                    (current, inactive) = (inactive, current);
+                    round++;
+                }
+                if (!person1.HasLost())
+                {
+                    person1.GetExperience();
+                    Console.WriteLine($"The winner is {person1}.");
+                    Console.WriteLine();
+                    return person1;
+                }
+                person2.GetExperience();
+                Console.WriteLine($"The winner is {person2}.");
+                Console.WriteLine();
+                return person2;
+            }
+            public DikuPerson? RunDebate(List<DikuPerson> debateParticipants)
+            {
+                var round = 1;
+                Console.WriteLine($"Final Debate.");
+                List<DikuPerson> winners = new List<DikuPerson>();
+                while (debateParticipants.Count > 1)
+                {
+                    var p1 = debateParticipants[0];
+                    var p2 = debateParticipants[1];
+                    winners.Add(Discuss(p1, p2));
+                    debateParticipants.Remove(p1);
+                    debateParticipants.Remove(p2);
 
-        if (!person1.HasLost())
-        {
-            var winner = person1;
-            winner.GetExperience();
-            Console.WriteLine($"The winner is {winner}.");
-            Console.WriteLine();
+                    if (debateParticipants.Count == 1 && winners.Count > 0)
+                    {
+                        winners.Add((debateParticipants[0]));
+                        round++;
+                        return RunDebate(winners);
+                    }
+                    if (debateParticipants.Count == 0 && winners.Count > 1)
+                    {
+                        return RunDebate(winners);
+                    }
+                }
+                return winners[0];
+            }
         }
-
-        if (!person2.HasLost())
-        {
-            var winner = person2;
-            winner.GetExperience();
-            Console.WriteLine($"The winner is {winner}.");
-            Console.WriteLine();
-        }
-
-        if (person1 != null) return person1;
-        return person2;
     }
 }
