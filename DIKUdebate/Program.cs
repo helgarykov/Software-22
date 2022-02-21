@@ -30,7 +30,7 @@ namespace DIKUDebate
                     elise,
                     boris,
                 };
-
+                // Important that the call to RunDebate() takes place after a new list object been initialized.
                 classroom.RunDebate(debateParticipants);
             }
         }
