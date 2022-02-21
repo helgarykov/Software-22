@@ -4,7 +4,13 @@ using System.Collections.Generic;
 namespace SortingCards;
 
 public class Program {
-    static void Main() {
+    static void Main()
+    {
+        /*var card = new Card(2, 3);
+        var cardTwo = new Card(13, 3);
+        if (card != null) Console.WriteLine(card.CompareTo(cardTwo));*/
+
+
         var deck = new List<Card> {
             new Card (2,3),
             new Card (5,1),
@@ -19,15 +25,6 @@ public class Program {
         };
 
         deck.Sort();
-
-        /*void PrintCards(List<Card> deck)
-        {
-            foreach (Card card in deck)
-            {
-                Console.WriteLine($"{card.rank}, {card.suit}");
-            }
-        }
-        PrintCards(deck); */
 
         var sortedDeck = new List<Card> {
             new Card (1,1),
@@ -50,7 +47,6 @@ public class Program {
                 return;
             }
         }
-
         Console.WriteLine("Deck sorted successfully!");
     }
 }

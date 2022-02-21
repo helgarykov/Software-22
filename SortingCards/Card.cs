@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace SortingCards;
 
@@ -15,7 +16,7 @@ public class Card : IComparable<Card> {
     /// Given an object Card, CompareTo sorts cards
     /// first by their suit property and then by rank property.
     /// </summary>
-    /// <param name="c"> The object Card with which we
+    /// <param name="cardToCompare"> The object Card with which we
     /// compare our Card </param>
     /// <returns> A positive int if this.suit/this.rank index is "greater than" c.
     /// A negative int if this.suit/rank index is "less than" c.
