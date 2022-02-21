@@ -29,7 +29,7 @@ public class CursorTest {
         // Question to Uffe: Commented out if collision is to happen.
         //cursor.MoveUp();
         int posY = cursor.position.Y;
-        //System.Console.WriteLine(cursor.position.Y);
+        System.Console.WriteLine(cursor.position.Y);
         cursor.MoveUp();
         Assert.True(condition:posY - 1 == cursor.position.Y , message: "The cursor didn't move up!");
     }

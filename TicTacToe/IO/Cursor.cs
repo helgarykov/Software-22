@@ -66,7 +66,7 @@ public class Cursor : IPositionInput {
     public void MoveDown()
     {
         // Bottom wall. The condition.
-        if (Y < max - 1)
+        if (Y < max)
         {
             Y += 1;
         }
