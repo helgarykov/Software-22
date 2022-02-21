@@ -36,10 +36,10 @@ public class CursorTest {
 
     [Test]
     public void MoveDownTest() {
-        //cursor.MoveDown();
+        cursor.MoveDown();
         int posY = cursor.position.Y;
         cursor.MoveDown();
-        Assert.True(condition:posY + 1 == cursor.position.Y, message: "The cursor didn't move down!");
+        Assert.True(condition:posY == cursor.position.Y, message: "The cursor didn't move down!");
     }
     
     [Test]
