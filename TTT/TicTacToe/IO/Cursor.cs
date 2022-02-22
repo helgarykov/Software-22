@@ -65,7 +65,7 @@ public class Cursor : IPositionInput {
     /// </summary>
     public void MoveDown()
     {
-        // Bottom wall. The condition.
+        // Condition for the bottom wall.
         if (Y < max)
         {
             Y += 1;
@@ -77,7 +77,7 @@ public class Cursor : IPositionInput {
     /// </summary>
     public void MoveLeft()
     {
-        // The left hand wall.
+        // The left-hand wall.
         if (X > min)
         {
             X -= 1;
@@ -113,8 +113,10 @@ public class Cursor : IPositionInput {
     /// <returns>
     /// True if the InputType was PerformMove else false.
     /// </returns>
-    private bool MoveCursor(InputType inputType) {
-        switch (inputType)
+    private bool MoveCursor(InputType inputType)
+    {
+        return (inputType == InputType.PerformMove);
+        /* switch (inputType)
         {
             case InputType.Undefined:
                 return true;
@@ -131,7 +133,7 @@ public class Cursor : IPositionInput {
             case InputType.Left:
                 return true;
         }
-        return true;
+        return true; */
     }
 
     /// <summary>

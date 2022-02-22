@@ -41,7 +41,6 @@ public class CursorTest {
         cursor.MoveDown();
         Assert.True(condition:posY == cursor.position.Y, message: "The cursor didn't move down!");
     }
-    
     [Test]
     public void MoveLeftTest() {
         //cursor.MoveLeft();
