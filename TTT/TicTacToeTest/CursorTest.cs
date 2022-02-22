@@ -27,11 +27,11 @@ public class CursorTest {
     public void MoveUpTest()
     {
         // Question to Uffe: Commented out if collision is to happen.
-        //cursor.MoveUp();
+        cursor.MoveUp();
         int posY = cursor.position.Y;
         System.Console.WriteLine(cursor.position.Y);
         cursor.MoveUp();
-        Assert.True(condition:posY - 1 == cursor.position.Y , message: "The cursor didn't move up!");
+        Assert.True(condition:posY == cursor.position.Y , message: "The cursor didn't move up!");
     }
 
     [Test]
@@ -43,10 +43,10 @@ public class CursorTest {
     }
     [Test]
     public void MoveLeftTest() {
-        //cursor.MoveLeft();
+        cursor.MoveLeft();
         int posX = cursor.position.X;
         cursor.MoveLeft();
-        Assert.True(condition:posX - 1 == cursor.position.X, message: "The cursor didn't move left!");
+        Assert.True(condition:posX == cursor.position.X, message: "The cursor didn't move left!");
     }
 
     [Test]
