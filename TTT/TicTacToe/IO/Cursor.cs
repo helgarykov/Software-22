@@ -115,25 +115,7 @@ public class Cursor : IPositionInput {
     /// </returns>
     private bool MoveCursor(InputType inputType)
     {
-        return (inputType == InputType.PerformMove);
-        /* switch (inputType)
-        {
-            case InputType.Undefined:
-                return true;
-            case InputType.PerformMove:
-                return false;
-            case InputType.Exit:
-                return true;
-            case InputType.Up:
-                return true;
-            case InputType.Down:
-                return true;
-            case InputType.Right:
-                return true;
-            case InputType.Left:
-                return true;
-        }
-        return true; */
+        return (inputType != InputType.PerformMove);
     }
 
     /// <summary>

@@ -5,13 +5,14 @@ namespace TicTacToeTest;
 using NUnit.Framework;
 using TicTacToe;
 
-public class BoardCheckerTest 
+public class BoardCheckerTest
 {
     public Board board;
     public BoardChecker boardChecker;
 
     [SetUp]
-    public void Setup() {
+    public void Setup()
+    {
         board = new Board(3);
         boardChecker = new BoardChecker();
     }
@@ -30,7 +31,7 @@ public class BoardCheckerTest
         board.TryInsert(1, 0, PlayerIdentifier.Naught);
         board.TryInsert(1, 1, PlayerIdentifier.Naught);
         board.TryInsert(1, 2, PlayerIdentifier.Naught);
-        
+
         bool result = boardChecker.IsRowWin(board);
 
         Assert.True(result);
@@ -58,50 +59,86 @@ public class BoardCheckerTest
 
         Assert.False(result);
     }
-    public void RowWinIsFalseWhenNotAllOfSameKind() {}
 
-    [Test]
-    public void ColumnWinTest() {
-        // CODE HERE!
-        Assert.Fail();
+    public void RowWinIsFalseWhenNotAllOfSameKind()
+    {
     }
 
     [Test]
-    public void InconclusiveTest() {
-        // CODE HERE!
-        Assert.Fail();
-    }
-
-    [Test]
-    public void TiedTest()
+    public void ColumnWinTest()
     {
         // CODE HERE!
+        Assert.Fail();
+    }
+
+    [Test]
+    public void InconclusiveTest()
+    {
+        // CODE HERE!
+        Assert.Fail();
+    }
+
+    [Test]
+    public void TiedWhenBoardIsFilledButNoWin()
+    {
+        board.TryInsert(0, 0, PlayerIdentifier.Cross);
+        board.TryInsert(0, 1, PlayerIdentifier.Naught);
+        board.TryInsert(0, 2, PlayerIdentifier.Cross);
+        board.TryInsert(1, 0, PlayerIdentifier.Naught);
+        board.TryInsert(1, 1, PlayerIdentifier.Naught);
+        board.TryInsert(1, 2, PlayerIdentifier.Cross);
+        board.TryInsert(2, 0, PlayerIdentifier.Naught);
+        board.TryInsert(2, 1, PlayerIdentifier.Cross);
+        board.TryInsert(2, 2, PlayerIdentifier.Naught);
+
+        BoardState result = boardChecker.CheckBoardState(board);
+
+        Assert.True(result == BoardState.Tied);
 
     }
 
-    /* [Test]
-    public void TiedTest() {
-        // CODE HERE!
+    [Test]
+    public void NotTiedWhenBoardIsFilledWithWin()
+    {
+        board.TryInsert(0, 0, PlayerIdentifier.Cross);
+        board.TryInsert(0, 1, PlayerIdentifier.Naught);
+        board.TryInsert(0, 2, PlayerIdentifier.Naught);
+        board.TryInsert(1, 0, PlayerIdentifier.Naught);
+        board.TryInsert(1, 1, PlayerIdentifier.Naught);
+        board.TryInsert(1, 2, PlayerIdentifier.Cross);
+        board.TryInsert(2, 0, PlayerIdentifier.Naught);
+        board.TryInsert(2, 1, PlayerIdentifier.Cross);
+        board.TryInsert(2, 2, PlayerIdentifier.Naught);
 
-        double x = 5;
-        double y = 5;
-        double delta = 0.01;
+        BoardState result = boardChecker.CheckBoardState(board);
 
-        Assert.
-        Assert.AreEqual(x,y, delta);
-        Assert.True(Math.Abs(x - y) < delta);
+        Assert.AreNotEqual(result, BoardState.Tied);
 
-        bool a = false;
-        
-        Assert.False(a);
-        Assert.True(!a);
-        
-        
-        
-        Assert.Fail();
-        
-    } */
+    }
+}
+
+/* [Test]
+public void TiedTest() {
+    // CODE HERE!
+
+    double x = 5;
+    double y = 5;
+    double delta = 0.01;
+
+    Assert.
+    Assert.AreEqual(x,y, delta);
+    Assert.True(Math.Abs(x - y) < delta);
+
+    bool a = false;
     
-    public void TiedWhenBoardIsFilledButNoWin() {}
-    public void NotTiedWhenBoardIsFilledWithWin() {}
+    Assert.False(a);
+    Assert.True(!a);
+    
+    
+    
+    Assert.Fail();
+    
+} */
+    
+   
 

@@ -34,7 +34,7 @@ public class BoardChecker : IBoardChecker
         for (var i = 0; i < board.Size; i++)
         {
             counter = 0;
-            for (var j = 0; j < board.Size; j++)
+            for (var j = 1; j < board.Size; j++)
             {
                 if ( checker == board.Get(i,j) || counter == 0)
                 {
@@ -132,7 +132,7 @@ public class BoardChecker : IBoardChecker
         for (var i = 0; i < board.Size; i++)
         {
             counter = 0;
-            for (var j = 0; j < board.Size; j++)
+            for (var j = 1; j < board.Size; j++)
             {
                 if (checker == board.Get(j, i) || counter == 0)
                 {
