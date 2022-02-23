@@ -24,9 +24,8 @@ public class CursorTest {
     }
 
     [Test]
-    public void MoveUpTest()
+    public void MoveUpTest()  
     {
-        // Question to Uffe: Commented out if collision is to happen.
         cursor.MoveUp();
         int posY = cursor.position.Y;
         System.Console.WriteLine(cursor.position.Y);

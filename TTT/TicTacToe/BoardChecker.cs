@@ -34,7 +34,7 @@ public class BoardChecker : IBoardChecker
         for (var i = 0; i < board.Size; i++)
         {
             counter = 0;
-            for (var j = 1; j < board.Size; j++)
+            for (var j = 0; j < board.Size; j++)
             {
                 if ( checker == board.Get(i,j) || counter == 0)
                 {
@@ -125,14 +125,14 @@ public class BoardChecker : IBoardChecker
     /// <returns>
     /// True if there is a win where all identifiers in the column is equal else false.
     /// </returns>
-    private bool IsColWin(Board board)
+    public bool IsColWin(Board board)
     {
         int counter;
         Nullable<PlayerIdentifier> checker = null;
         for (var i = 0; i < board.Size; i++)
         {
             counter = 0;
-            for (var j = 1; j < board.Size; j++)
+            for (var j = 0; j < board.Size; j++)
             {
                 if (checker == board.Get(j, i) || counter == 0)
                 {
@@ -158,7 +158,7 @@ public class BoardChecker : IBoardChecker
     /// <returns>
     /// True if there is a win where all identifiers in the diagonal is equal else false.
     /// </returns>
-    private bool IsDiagWin(Board board)
+    public bool IsDiagWin(Board board)
     {
         var counter = 0;
         Nullable<PlayerIdentifier> checker = null;
@@ -205,7 +205,7 @@ public class BoardChecker : IBoardChecker
             return BoardState.Winner;
         }
         for (int i = 0; i < board.Size; i++) {
-            for (int j = 0; i < board.Size; i++) {
+            for (int j = 1; i < board.Size; i++) {
                 if (board.Get(i,j) != null) {
                     counter++;
                 }
