@@ -16,7 +16,7 @@ public class CursorTest {
         cursor.MoveRight();
     }
 
-    [Test]
+    [Test] 
     public void CursorCenterTest()
     {
 

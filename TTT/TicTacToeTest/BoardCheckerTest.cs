@@ -18,27 +18,39 @@ public class BoardCheckerTest
     }
 
     [Test]
-    public void DiagonalWinTestIsTrueWhenThreeNaughtsOnOneDiagonal()
+    public void RightDiagonalWinTestIsTrueWhenThreeNaughtsOnOneDiagonal()
     {
-        board.TryInsert(2, 0, PlayerIdentifier.Naught);
+        board.TryInsert(0, 0, PlayerIdentifier.Naught);
         board.TryInsert(1, 1, PlayerIdentifier.Naught);
-        board.TryInsert(0, 2, PlayerIdentifier.Naught);
+        board.TryInsert(2, 2, PlayerIdentifier.Naught);
 
         bool result = boardChecker.IsDiagWin(board);
 
         Assert.True(result);
     }
-
+    
     [Test]
-    public void DiagonalWinTestIsFalseWhenTwoCrossOnOneDiagonal()
+    public void LeftDiagonalWinTestIsFalseWhenTwoCrossOnOneDiagonal()
     {
-        board.TryInsert(2, 0, PlayerIdentifier.Cross);
-        board.TryInsert(1, 1, PlayerIdentifier.Naught);
         board.TryInsert(0, 2, PlayerIdentifier.Cross);
+        board.TryInsert(1, 1, PlayerIdentifier.Naught);
+        board.TryInsert(2, 0, PlayerIdentifier.Cross);
 
         bool result = boardChecker.IsDiagWin(board);
 
         Assert.False(result);
+    } 
+
+    [Test]
+    public void LeftDiagonalWinTestIsTrueWhenThreeCrossOnOneDiagonal()
+    {
+        board.TryInsert(0, 2, PlayerIdentifier.Cross);
+        board.TryInsert(1, 1, PlayerIdentifier.Cross);
+        board.TryInsert(2, 0, PlayerIdentifier.Cross);
+
+        bool result = boardChecker.IsDiagWin(board);
+
+        Assert.True(result);
     }
 
     [Test]
@@ -90,9 +102,9 @@ public class BoardCheckerTest
     [Test]
     public void ColumnWinTestIsTrueWhenAllOfSameKind()
     {
-        board.TryInsert(0, 1, PlayerIdentifier.Cross);
-        board.TryInsert(1, 1, PlayerIdentifier.Cross);
-        board.TryInsert(2, 1, PlayerIdentifier.Cross);
+        board.TryInsert(0, 0, PlayerIdentifier.Cross);
+        board.TryInsert(1, 0, PlayerIdentifier.Cross);
+        board.TryInsert(2, 0, PlayerIdentifier.Cross);
 
         bool result = boardChecker.IsColWin(board);
         
@@ -166,12 +178,12 @@ public class BoardCheckerTest
 
         BoardState result = boardChecker.CheckBoardState(board);
 
-        Assert.AreNotEqual(result, BoardState.Tied);
+        Assert.AreEqual(result, BoardState.Tied);
 
     }
 
     [Test]
-    public void NotTiedWhenBoardIsFilledWithWin()
+    public void NotTiedWhenBoardIsFilledWithWinLeftDiagonal()
     {
         board.TryInsert(0, 0, PlayerIdentifier.Cross);
         board.TryInsert(0, 1, PlayerIdentifier.Naught);
@@ -180,6 +192,25 @@ public class BoardCheckerTest
         board.TryInsert(1, 1, PlayerIdentifier.Naught);
         board.TryInsert(1, 2, PlayerIdentifier.Cross);
         board.TryInsert(2, 0, PlayerIdentifier.Naught);
+        board.TryInsert(2, 1, PlayerIdentifier.Cross);
+        board.TryInsert(2, 2, PlayerIdentifier.Naught);
+
+        BoardState result = boardChecker.CheckBoardState(board);
+
+        Assert.AreNotEqual(result, BoardState.Tied);
+
+    }
+    
+    [Test]
+    public void NotTiedWhenBoardIsFilledWithWinRightDiagonal()
+    {
+        board.TryInsert(0, 0, PlayerIdentifier.Naught);
+        board.TryInsert(0, 1, PlayerIdentifier.Naught);
+        board.TryInsert(0, 2, PlayerIdentifier.Cross);
+        board.TryInsert(1, 0, PlayerIdentifier.Naught);
+        board.TryInsert(1, 1, PlayerIdentifier.Naught);
+        board.TryInsert(1, 2, PlayerIdentifier.Cross);
+        board.TryInsert(2, 0, PlayerIdentifier.Cross);
         board.TryInsert(2, 1, PlayerIdentifier.Cross);
         board.TryInsert(2, 2, PlayerIdentifier.Naught);
 

@@ -1,4 +1,5 @@
 using System.Drawing;
+using System.Reflection.Metadata.Ecma335;
 
 namespace TicTacToe.IO;
 
@@ -115,8 +116,30 @@ public class Cursor : IPositionInput {
     /// </returns>
     private bool MoveCursor(InputType inputType)
     {
-        return (inputType != InputType.PerformMove);
-    }
+        switch (inputType)
+        {
+            case InputType.Undefined:
+                return true;
+            case InputType.Down:
+                MoveDown();
+                return true;
+            case InputType.Exit:
+                Quit();
+                return true;
+            case InputType.Left:
+                MoveLeft();
+                return true;
+            case InputType.Right:
+                MoveRight();
+                return true;
+            case InputType.Up:
+                MoveUp();
+                return true;
+            case InputType.PerformMove:
+                return false;
+        }
+        return false;
+    } 
 
     /// <summary>
     /// Method that will perform some game action depending on the TypeInput.
