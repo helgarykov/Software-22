@@ -220,29 +220,5 @@ public class BoardCheckerTest
 
     }
 }
-
-/* [Test]
-public void TiedTest() {
-    // CODE HERE!
-
-    double x = 5;
-    double y = 5;
-    double delta = 0.01;
-
-    Assert.
-    Assert.AreEqual(x,y, delta);
-    Assert.True(Math.Abs(x - y) < delta);
-
-    bool a = false;
-    
-    Assert.False(a);
-    Assert.True(!a);
-    
-    
-    
-    Assert.Fail();
-    
-} */
-    
    
 

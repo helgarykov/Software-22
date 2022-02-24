@@ -111,24 +111,18 @@ public class BoardChecker : IBoardChecker
     {
         PlayerIdentifier? checkRight = board.Get(0, 0);
         PlayerIdentifier? checkLeft = board.Get(board.Size - 1, 0);
+        for (int i = 1; i < board.Size; i++)
         {
-            var isDiagWin = true;
-            if (!checkRight.HasValue)
-            {
-                for (int i = 1; i < board.Size; i++)
-                {
-                    if (board.Get(i, i) == checkRight) isDiagWin = true;
-                }
-            }
+            if (!checkRight.HasValue) return false;
             
-            if (!checkLeft.HasValue)
-            {
-                for (int i = 0; i < board.Size; i++)
-                {
-                    if (board.Get( i, i - board.Size) == checkLeft) isDiagWin = true;
-                }
-                if (!isDiagWin) return false;
-            }
+            if (board.Get(i, i) == checkRight) return true;
+                
+        }
+        for (int i = 0; i < board.Size; i++)
+        {
+            if (!checkLeft.HasValue) return false;
+          
+            if (board.Get( board.Size-1-i, i) == checkLeft) return true;
         }
         return false;
     }
