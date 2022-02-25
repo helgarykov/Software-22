@@ -24,36 +24,10 @@ public class BoardChecker : IBoardChecker
     /// <returns>
     /// True if there is a win where all identifiers in the row is equal else false.
     /// </returns>
-    public bool IsRowWin1(Board board)
-    {   // Creates a new array of the length, board.Size (p.t. celle 0, celle 1 og celle 2, size = 3).
-        //Nullable<PlayerIdentifier>[] rowWinCheck = new Nullable<PlayerIdentifier>[board.Size];
 
-        int counter;
-        Nullable<PlayerIdentifier> checker = null;
-        
-        for (var i = 0; i < board.Size; i++)
-        {
-            counter = 0;
-            for (var j = 0; j < board.Size; j++)
-            {
-                if ( checker == board.Get(i,j) || counter == 0)
-                {
-                    counter++;
-                }
-
-                checker = board.Get(i, j);
-                if (counter == board.Size && checker != null)
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    
     public bool IsRowWin(Board board)
     {
-        Nullable<PlayerIdentifier> checker;
+        PlayerIdentifier? checker;
         for (var i = 0; i < board.Size; i++)
         {
             var isRowWin = true;
@@ -80,7 +54,7 @@ public class BoardChecker : IBoardChecker
     /// </returns>
     public bool IsColWin(Board board)
     {
-        Nullable<PlayerIdentifier> checker;
+        PlayerIdentifier? checker;
         for (var i = 0; i < board.Size; i++)
         {
             var isColWin = true;
@@ -111,55 +85,27 @@ public class BoardChecker : IBoardChecker
     {
         PlayerIdentifier? checkRight = board.Get(0, 0);
         PlayerIdentifier? checkLeft = board.Get(board.Size - 1, 0);
-        for (int i = 1; i < board.Size; i++)
-        {
-            if (!checkRight.HasValue) return false;
-            
-            if (board.Get(i, i) == checkRight) return true;
-                
-        }
+        bool isDiagWin = true;
         for (int i = 0; i < board.Size; i++)
         {
-            if (!checkLeft.HasValue) return false;
-          
-            if (board.Get( board.Size-1-i, i) == checkLeft) return true;
+            if (!checkRight.HasValue) isDiagWin = false;
+            
+            if (board.Get(i, i) != checkRight) isDiagWin = false;
+            
         }
+        if (isDiagWin) return true;
+        
+        isDiagWin = true;
+        for (int i = 0; i < board.Size; i++)
+        {
+            if (!checkLeft.HasValue) isDiagWin = false;
+          
+            if (board.Get( board.Size - 1 - i, i) != checkLeft) isDiagWin = false;
+            
+        }
+        if (isDiagWin) return true;
         return false;
     }
-
-
-
-
-    /* var counter = 0;
-    Nullable<PlayerIdentifier> checker = null;
-    for (int i = 0; i < board.Size; i++)
-    {
-        if (checker == board.Get(i,i))
-        {
-            counter++;
-        }
-        checker = board.Get(i, i);
-        if (counter == board.Size && checker != null)
-        {
-            return true;
-        }
-    }
-    counter = 0;
-    for (int i = 0; i < board.Size; i++)
-    {
-        if (checker == board.Get((board.Size - 1 - i), i) || counter == 0)
-        {
-            counter++;
-        }
-        checker = board.Get((board.Size - 1 - i), i);
-        if (counter == board.Size && checker != null)
-        {
-            return true;
-        }
-    }
-    return false; */
-    
-
     /// <summary>
     /// Method that will determine what the state of the board is. If there is a winner, a tied or
     /// the game is still inconclusive.
@@ -171,10 +117,8 @@ public class BoardChecker : IBoardChecker
         if (IsRowWin(board) || IsColWin(board) || IsDiagWin(board)) {
             return BoardState.Winner;
         }
-        if (board.IsFull())
-        {
-            return BoardState.Tied;
-        }
-        return BoardState.Inconclusive;
+        if (!board.IsFull()) return BoardState.Inconclusive;
+        
+        return BoardState.Tied;
     }
 }
