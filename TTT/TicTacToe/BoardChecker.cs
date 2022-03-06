@@ -71,8 +71,7 @@ public class BoardChecker : IBoardChecker
         }
         return false;
     }
-
-
+    
     /// <summary>
     /// Method that is used to check if all elements in a diagonal is equal to eachother and is not
     /// equal to null. This diagonal will always be the two longest in a square.
@@ -103,9 +102,9 @@ public class BoardChecker : IBoardChecker
             if (board.Get( board.Size - 1 - i, i) != checkLeft) isDiagWin = false;
             
         }
-        if (isDiagWin) return true;
-        return false;
+        return isDiagWin;
     }
+    
     /// <summary>
     /// Method that will determine what the state of the board is. If there is a winner, a tied or
     /// the game is still inconclusive.

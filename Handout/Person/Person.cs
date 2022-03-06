@@ -1,8 +1,10 @@
 using System;
 
 namespace PersonNS {
-    public class Person : IComparable {
-        public Person(string name, int age) {
+    public class Person : IComparable 
+    {
+        public Person(string name, int age) 
+        {
             this.name = name;
             this.age = age;
         }

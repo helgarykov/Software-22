@@ -183,7 +183,7 @@ public class BoardCheckerTest
     }
 
     [Test]
-    public void NotTiedWhenBoardIsFilledWithWinLeftDiagonal()
+    public void NotTiedWhenBoardIsFilledWithWinLeftDiag()
     {
         board.TryInsert(0, 0, PlayerIdentifier.Cross);
         board.TryInsert(0, 1, PlayerIdentifier.Naught);
@@ -202,7 +202,7 @@ public class BoardCheckerTest
     }
     
     [Test]
-    public void NotTiedWhenBoardIsFilledWithWinRightDiagonal()
+    public void NotTiedWhenBoardIsFilledWithWinRightDiag()
     {
         board.TryInsert(0, 0, PlayerIdentifier.Naught);
         board.TryInsert(0, 1, PlayerIdentifier.Naught);
