@@ -1,0 +1,15 @@
+/Users/helgarykov/Documents/Software-22/Collatz/bin/Debug/net6.0/Collatz
+/Users/helgarykov/Documents/Software-22/Collatz/bin/Debug/net6.0/Collatz.deps.json
+/Users/helgarykov/Documents/Software-22/Collatz/bin/Debug/net6.0/Collatz.runtimeconfig.json
+/Users/helgarykov/Documents/Software-22/Collatz/bin/Debug/net6.0/Collatz.dll
+/Users/helgarykov/Documents/Software-22/Collatz/bin/Debug/net6.0/Collatz.pdb
+/Users/helgarykov/Documents/Software-22/Collatz/obj/Debug/net6.0/Collatz.csproj.AssemblyReference.cache
+/Users/helgarykov/Documents/Software-22/Collatz/obj/Debug/net6.0/Collatz.GeneratedMSBuildEditorConfig.editorconfig
+/Users/helgarykov/Documents/Software-22/Collatz/obj/Debug/net6.0/Collatz.AssemblyInfoInputs.cache
+/Users/helgarykov/Documents/Software-22/Collatz/obj/Debug/net6.0/Collatz.AssemblyInfo.cs
+/Users/helgarykov/Documents/Software-22/Collatz/obj/Debug/net6.0/Collatz.csproj.CoreCompileInputs.cache
+/Users/helgarykov/Documents/Software-22/Collatz/obj/Debug/net6.0/Collatz.dll
+/Users/helgarykov/Documents/Software-22/Collatz/obj/Debug/net6.0/refint/Collatz.dll
+/Users/helgarykov/Documents/Software-22/Collatz/obj/Debug/net6.0/Collatz.pdb
+/Users/helgarykov/Documents/Software-22/Collatz/obj/Debug/net6.0/Collatz.genruntimeconfig.cache
+/Users/helgarykov/Documents/Software-22/Collatz/obj/Debug/net6.0/ref/Collatz.dll
