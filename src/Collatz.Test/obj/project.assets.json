@@ -882,6 +882,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "Collatz/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Collatz.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Collatz.dll": {}
+        }
       }
     }
   },
@@ -3844,10 +3854,16 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Collatz/1.0.0": {
+      "type": "project",
+      "path": "../Collatz/Collatz.csproj",
+      "msbuildProject": "../Collatz/Collatz.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Collatz >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.11.0",
       "NUnit >= 3.13.2",
       "NUnit3TestAdapter >= 4.0.0",
@@ -3878,7 +3894,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/helgarykov/Documents/Software-22/src/Collatz/Collatz.csproj": {
+              "projectPath": "/Users/helgarykov/Documents/Software-22/src/Collatz/Collatz.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

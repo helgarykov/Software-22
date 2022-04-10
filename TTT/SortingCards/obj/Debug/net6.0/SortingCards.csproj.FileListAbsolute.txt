@@ -1,0 +1,15 @@
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/bin/Debug/net6.0/SortingCards
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/bin/Debug/net6.0/SortingCards.deps.json
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/bin/Debug/net6.0/SortingCards.runtimeconfig.json
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/bin/Debug/net6.0/SortingCards.dll
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/bin/Debug/net6.0/SortingCards.pdb
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/obj/Debug/net6.0/SortingCards.csproj.AssemblyReference.cache
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/obj/Debug/net6.0/SortingCards.GeneratedMSBuildEditorConfig.editorconfig
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/obj/Debug/net6.0/SortingCards.AssemblyInfoInputs.cache
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/obj/Debug/net6.0/SortingCards.AssemblyInfo.cs
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/obj/Debug/net6.0/SortingCards.csproj.CoreCompileInputs.cache
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/obj/Debug/net6.0/SortingCards.dll
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/obj/Debug/net6.0/refint/SortingCards.dll
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/obj/Debug/net6.0/SortingCards.pdb
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/obj/Debug/net6.0/SortingCards.genruntimeconfig.cache
+/Users/helgarykov/Documents/Software-22/TTT/SortingCards/obj/Debug/net6.0/ref/SortingCards.dll

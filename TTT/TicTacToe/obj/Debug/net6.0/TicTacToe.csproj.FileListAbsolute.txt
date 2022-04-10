@@ -1,0 +1,15 @@
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/bin/Debug/net6.0/TicTacToe
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/bin/Debug/net6.0/TicTacToe.deps.json
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/bin/Debug/net6.0/TicTacToe.runtimeconfig.json
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/bin/Debug/net6.0/TicTacToe.dll
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/bin/Debug/net6.0/TicTacToe.pdb
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/obj/Debug/net6.0/TicTacToe.csproj.AssemblyReference.cache
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/obj/Debug/net6.0/TicTacToe.GeneratedMSBuildEditorConfig.editorconfig
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/obj/Debug/net6.0/TicTacToe.AssemblyInfoInputs.cache
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/obj/Debug/net6.0/TicTacToe.AssemblyInfo.cs
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/obj/Debug/net6.0/TicTacToe.csproj.CoreCompileInputs.cache
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/obj/Debug/net6.0/TicTacToe.dll
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/obj/Debug/net6.0/refint/TicTacToe.dll
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/obj/Debug/net6.0/TicTacToe.pdb
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/obj/Debug/net6.0/TicTacToe.genruntimeconfig.cache
+/Users/helgarykov/Documents/Software-22/TTT/TicTacToe/obj/Debug/net6.0/ref/TicTacToe.dll

@@ -4,14 +4,12 @@ namespace Collatz.Test;
 
 public class Tests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
 
     [Test]
-    public void Test1()
+    [TestCase(2, 10, 11)]
+    public void CollatzReturns(int n, int maxLen, int maxSize)
     {
-        Assert.Pass();
+
+        Assert.AreEqual(1, 1);
     }
 }
