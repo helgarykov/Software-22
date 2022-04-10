@@ -4,12 +4,17 @@ namespace Collatz.Test;
 
 public class Tests
 {
+    [SetUp]
+    public void Setup()
+    {
+    }
 
     [Test]
-    [TestCase(2, 10, 11)]
-    public void CollatzReturns(int n, int maxLen, int maxSize)
+    [TestCase(3, 20, 20)]
+    [TestCase(9, 20, 50)]
+    public void CollatzReturnsCorrectly(int n, int maxLen, int maxSize)
     {
-
-        Assert.AreEqual(1, 1);
+        Assert.AreEqual(7, 7);
+        Assert.AreEqual(8, 8);
     }
 }

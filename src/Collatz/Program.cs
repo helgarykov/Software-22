@@ -8,16 +8,13 @@ namespace Collatz
             public static void Main(string[] args)
             {  
                
-                var remainder = new BasicFunctions();
-                Console.WriteLine(remainder.Collatz(2, 10, 11));
-                Console.WriteLine();
-                //Console.WriteLine(remainder.GCD(-99, 4345));
-
-
+                var integer = new BasicFunctions();
+                Console.WriteLine(integer.Collatz(9, 20, 50));
+                
             }
         }
     }
 }
 
 
-/// Console.WriteLine("Hello, World!");
+
