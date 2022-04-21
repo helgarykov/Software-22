@@ -3,12 +3,12 @@
 public static class Collatz
 {
     /// <summary>
-    /// hhhhh
+    /// Checks if n reaches 1.
     /// </summary>
     /// <param name="n"></param>
     /// <param name="maxLen"></param>
     /// <param name="maxSize"></param>
-    /// <returns> len </returns>
+    /// <returns> len Number of iterations. </returns>
     static int Collatz(int n, int maxLen, int maxSize)
     {
         int len = 0;

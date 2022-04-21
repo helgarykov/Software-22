@@ -2,5 +2,8 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=942e2aff_002Dc63e_002D4f37_002Daa94_002Dcdf24a9a4f12/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CollatzReturns" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::98546445-3DB1-4B6B-8CCF-5F4C9590AB3B::net6.0::Collatz.Test.Tests.CollatzReturnsCorrectly&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::98546445-3DB1-4B6B-8CCF-5F4C9590AB3B::net6.0::Collatz.Test.Tests.CollatzFailsOutOfBounds&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::98546445-3DB1-4B6B-8CCF-5F4C9590AB3B::net6.0::Collatz.Test.Tests.CollatzFailsNisNegative&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::98546445-3DB1-4B6B-8CCF-5F4C9590AB3B::net6.0::Collatz.Test.Tests.CollatzAndCollatzRecReturnEqual&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
