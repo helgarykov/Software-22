@@ -35,7 +35,7 @@ public class Tests
     }
     
     [Test]
-    [TestCase(3, 20, 20)]
+    [TestCase(3, 20, 8)]
     [TestCase(9, 20, 53)]
     public void CollatzAndCollatzRecReturnEqual(int n, int maxLen, int maxSize)
     {
