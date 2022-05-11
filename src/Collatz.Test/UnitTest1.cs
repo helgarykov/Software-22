@@ -14,6 +14,9 @@ public class Tests
     [TestCase(8, 20, 20, 4)]
     [TestCase(3, 20, 20, 8)]
     [TestCase(9, 20, 53, 20)]
+    [TestCase(1,1,1,1)]
+    [TestCase(0,20, 20, 0)]
+
     public void CollatzReturnsCorrectly(int n, int maxLen, int maxSize, int expect_len)
     {
         Assert.AreEqual(BasicFunctions.Collatz(n, maxLen, maxSize), expect_len);
@@ -37,9 +40,14 @@ public class Tests
     [Test]
     [TestCase(3, 20, 8)]
     [TestCase(9, 20, 53)]
+    [TestCase(1,1,1)]
+    [TestCase(0,20, 20)]
     public void CollatzAndCollatzRecReturnEqual(int n, int maxLen, int maxSize)
     {
-        Assert.AreEqual(BasicFunctions.Collatz(n, maxLen, maxSize), BasicFunctions.CollatzRec(n, maxLen, maxSize));
+        int collatzResult = BasicFunctions.Collatz(n, maxLen, maxSize);
+        int collatzRecResult = BasicFunctions.CollatzRec(n, maxLen, maxSize);
+        
+        Assert.AreEqual(collatzResult,collatzRecResult);
     }
     
     
