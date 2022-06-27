@@ -1,0 +1,3 @@
+[submodule "sommer/sommer/the-public-library"]
+	path = sommer/sommer/the-public-library
+	url = https://github.com/kparkov/the-public-library.git
