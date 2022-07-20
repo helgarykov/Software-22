@@ -1,0 +1,15 @@
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/bin/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/bin/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2.deps.json
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/bin/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2.runtimeconfig.json
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/bin/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2.dll
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/bin/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2.pdb
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/obj/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2.csproj.AssemblyReference.cache
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/obj/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/obj/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2.AssemblyInfoInputs.cache
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/obj/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2.AssemblyInfo.cs
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/obj/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2.csproj.CoreCompileInputs.cache
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/obj/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2.dll
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/obj/Debug/net6.0/refint/HRI.SoftwareDevelopment2022.Lecture2.dll
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/obj/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2.pdb
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/obj/Debug/net6.0/HRI.SoftwareDevelopment2022.Lecture2.genruntimeconfig.cache
+/Users/helgarykov/Documents/Software-22/sommer/Lecture2/HRI.SoftwareDevelopment2022.Lecture2/obj/Debug/net6.0/ref/HRI.SoftwareDevelopment2022.Lecture2.dll

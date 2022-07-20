@@ -18,10 +18,12 @@
                 price = 29.95f;
             } */
 
-            var price = (isGoldCustomer) ? 19.95f : 29.95f; // the same as IF/ELSE statement above
+            /* var price = (isGoldCustomer) ? 19.95f : 29.95f; // the same as IF/ELSE statement above
             Console.WriteLine(price);
+            */
             
 
+            /*
             // Call to SwitchStatement() in Exercise1
             var season = new Exercise1();
             Exercise1.SwitchStatement();
@@ -32,7 +34,16 @@
             var maxValue = new Exercise2();
             Exercise2.MaxInteger();
             Console.WriteLine(maxValue);
-
+            
+            // Call to GetPortraitOrLandscape() in Exercise3
+            var portraitOrLandscape = new Exercise3();
+            Exercise3.GetPortraitOrLandscape();
+            Console.WriteLine(portraitOrLandscape);*/
+            
+            // Call to ControlSpeed() in Exercise4
+            var carSpeed = new Exercise4();
+            Exercise4.ControlSpeed();
+            Console.WriteLine(carSpeed);
         }
         
     }

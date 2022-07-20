@@ -7,9 +7,10 @@ public class Exercise2
 
     public static void MaxInteger()
     {
-        Console.WriteLine("Enter two numbers");
-        
+        Console.WriteLine("Enter a number");
         var integer1 = Convert.ToInt32(Console.ReadLine());
+        
+        Console.WriteLine("Enter one more number");
         var integer2 = Convert.ToInt32(Console.ReadLine());
         
         if (integer1 > integer2)
