@@ -13,29 +13,16 @@ public class Exercise3
         var discriminant = Math.Pow(b, 2) - 4 * a * c;
         switch (discriminant)
         {
-            // case > 0 when b < 0:
-            // {
-            //     var root1 = (Math.Abs(b) + Math.Sqrt(discriminant)) / 2 * a;
-            //     var root2 = (Math.Abs(b) - Math.Sqrt(discriminant)) / 2 * a;
-            //     Console.WriteLine("\n The roots of the equation are " + root1 + " and " + root2);
-            //     break;
-            // }
-            case > 0 when b > 0:
+            case > 0:
             {
                 var root1 = (b * -1 + Math.Sqrt(discriminant)) / 2 * a;
                 var root2 = (b * -1 - Math.Sqrt(discriminant)) / 2 * a;
                 Console.WriteLine("\n The roots of the equation are " + root1 + " and " + root2);
                 break;
             }
-            case 0 when b < 0:
+            case 0:
             {
-                var root = Math.Abs(b) / (2 * a);
-                Console.WriteLine("\n The equation has only one solution " + root);
-                break;
-            }
-            case 0 when b > 0:
-            {
-                var root = Math.Abs(b) * -1 / (2 * a);
+                var root = b * -1 / (2 * a);
                 Console.WriteLine("\n The equation has only one solution " + root);
                 break;
             }
@@ -45,3 +32,5 @@ public class Exercise3
         }
     }
 }
+
+
