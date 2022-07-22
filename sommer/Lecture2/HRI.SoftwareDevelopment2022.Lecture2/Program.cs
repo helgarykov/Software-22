@@ -15,7 +15,7 @@
             // Console.WriteLine(reversedNumbers);
             
             // Exercise 3
-            var roots = new Exercise3();
+            /*var roots = new Exercise3();
             Exercise3.GetRoots(1, -3, -4);
             Exercise3.GetRoots(3, -18, 27);
             Exercise3.GetRoots(1, 6, 14);
@@ -36,7 +36,19 @@
             // Exercise 5
             int[] myArray = {2, 76, 5, 45, 20, 15, 60, 100};
             Exercise5.ManipulateArray(myArray);
-            Console.WriteLine(myArray);
+            Console.WriteLine(myArray);*/
+            
+            // Exercise 6
+            Exercise6.GetVector(1, 15, 0.15m);
+            Console.WriteLine();
+            Exercise6.GetVector(5, 49, 48.99m);
+            Console.WriteLine();
+            Exercise6.GetVector(1, 15, 16.15m);
+            Console.WriteLine();
+            Exercise6.GetVector(99, 200, 150.15m);
+            Console.WriteLine();
+            Exercise6.GetVector(89, 100, 99.99m);
+            
             
             
             

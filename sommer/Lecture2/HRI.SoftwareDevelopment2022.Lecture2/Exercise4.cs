@@ -27,7 +27,7 @@ public class Exercise4
             //...
             //number:0
             //j:5
-            for(int j=0;j<5;j++){  // i dette loop læggers der alle 5 cifrer sammen, en efter en og skæres en cifra fra enden ad gangen
+            for(int j=0;j<5;j++){  // i dette loop lægges der alle 5 cifrer sammen, en efter en og skæres en cifra fra enden ad gangen
                 // number: 12345 
                 digit=number%10;
                 //digit: 5 - ostacha vid dilennya na 10
