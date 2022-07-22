@@ -16,10 +16,14 @@
             
             // Exercise 3
             var roots = new Exercise3();
-            Exercise3.GetRoots(1.0, -3.0, -4.0);
-            Exercise3.GetRoots(3.0, -18.0, 27.0);
-            Exercise3.GetRoots(1.0, 6.0, 14.0);
-            Exercise3.GetRoots(4.0, -12.0, 9.0);
+            Exercise3.GetRoots(1, -3, -4);
+            Exercise3.GetRoots(3, -18, 27);
+            Exercise3.GetRoots(1, 6, 14);
+            Exercise3.GetRoots(4, -12, 9);
+            Exercise3.GetRoots(0, 12, 9);
+            Exercise3.GetRoots(0, 20, 0);
+            Exercise3.GetRoots(0, 0, 19);
+            
             Console.WriteLine(roots);
             
             // Exercise 4
@@ -35,12 +39,13 @@
             
             
             //Returns all possible 5-digit numbers the sum of which is larger than 18.
-            Console.WriteLine(10.0/3.0);
+            /*Console.WriteLine(10.0/3.0);
+            Console.WriteLine(10.0/3);
             int sum;
             int number;
             int digit;
 
-            for(int i =100;i<1000;i++){
+            for(int i = 10000;i < 100000;i++){ // zadajom cykl(loop)
                 sum=0;
                 number=i;
                 //for loop disassembles number into digits
@@ -56,7 +61,7 @@
                 //...
                 //number:0
                 //j:5
-                for(int j=0;j<3;j++){
+                for(int j=0;j<5;j++){  // i dette loop læggers der alle 5 cifrer sammen, en efter en og skæres en cifra fra enden ad gangen
                     // number: 12345 
                     digit=number%10;
                     //digit: 5 - ostacha vid dilennya na 10
@@ -64,15 +69,16 @@
                     sum+=digit;
                     number/=10; 
                     //number: 1234 ( 12345/10 -> 1234 because both 12345 and 10 are integer)
+                    //and we need to cut this last number off
                 }
     
 
-                if(sum>15){
-                    Console.WriteLine(i);
+                if(sum>18)
+                {
+                    Console.WriteLine(i); // vi printer ud alle 5-cifrede tal hvis sum er større end 18
                 }
-            }
+            } */
         }
-        
     }
 }
 
