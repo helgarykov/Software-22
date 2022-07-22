@@ -6,15 +6,7 @@ public static class Exercise6
     {
         if (naturalNumberTwo <= 100)
         {
-            if (decimalNumber > naturalNumberOne && decimalNumber < naturalNumberTwo)
-            {
-                for (var i = naturalNumberOne; i <= naturalNumberTwo; i++)
-                {
-                    Console.WriteLine(i);
-
-                }
-            }
-            else if (decimalNumber < naturalNumberTwo && decimalNumber > 100)
+            if (decimalNumber > naturalNumberOne && decimalNumber < naturalNumberTwo || decimalNumber > 100)
             {
                 for (var i = naturalNumberOne; i <= naturalNumberTwo; i++)
                 {
