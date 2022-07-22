@@ -9,7 +9,7 @@ public class Exercise7
         var reverseNumber = ""; 
         
         //String Reverse 
-        for (int i = number!.Length-1; i >=0; i--)  
+        for (var i = number!.Length - 1; i >= 0; i--)  
         {  
             reverseNumber += number[i].ToString();  
         }  
