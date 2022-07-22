@@ -4,25 +4,26 @@ public class Exercise7
 {
     public static void DetermineWhetherNumberIsPalindrome()
     {
-        var revs="";  
-        Console.WriteLine(" Enter number");  
-        var s = Console.ReadLine();  
-            
+        Console.WriteLine("Enter number");  
+        var number = Console.ReadLine();  
+        var reverseNumber = ""; 
+        
         //String Reverse 
-        for (int i = s!.Length-1; i >=0; i--)  
+        for (int i = number!.Length-1; i >=0; i--)  
         {  
-            revs += s[i].ToString();  
+            reverseNumber += number[i].ToString();  
         }  
             
         // Checking whether string is palindrome or not  
-        if (revs == s) 
+        if (reverseNumber == number) 
         {  
-            Console.WriteLine("String is Palindrome \n Entered String Was {0} and reverse string is {1}", s, revs);  
+            Console.WriteLine("Number is Palindrome \n " +
+                              "Entered number was {0} and reverse number is {1}", number, reverseNumber);  
         }  
         else  
         {  
-            Console.WriteLine("String is not Palindrome \n Entered String Was {0} and reverse string is {1}", s, revs);  
-        }  
-        Console.ReadKey(); 
+            Console.WriteLine("Number is not Palindrome \n " +
+                              "Entered number was {0} and reverse number is {1}", number, reverseNumber);  
+        }
     }
 }
