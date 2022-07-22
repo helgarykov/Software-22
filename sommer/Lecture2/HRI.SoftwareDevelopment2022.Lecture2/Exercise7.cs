@@ -1,7 +1,10 @@
 namespace HRI.SoftwareDevelopment2022.Lecture2;
 
-public class Exercise7
+public static class Exercise7
 {
+    /// <summary>
+    /// Checks if the entered number is a palindrome.
+    /// </summary>
     public static void DetermineWhetherNumberIsPalindrome()
     {
         Console.WriteLine("Enter number");  
