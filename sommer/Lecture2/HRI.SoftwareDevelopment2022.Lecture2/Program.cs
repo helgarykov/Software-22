@@ -4,18 +4,14 @@
     {
         public static void Main(string[] args)
         {
-            //Exercise 1: Call to GetReversedName()
-            // var reversedName = new Exercise1();
-            // Exercise1.GetReversedName();
-            // Console.WriteLine(reversedName);
+            //Exercise 1
+            Exercise1.GetReversedName();
+            
             
             //Exercise 2
-            // var reversedNumbers = new Exercise2();
-            // Exercise2.ReverseNumbers();
-            // Console.WriteLine(reversedNumbers);
+            Exercise2.ReverseNumbers();
             
             // Exercise 3
-            
             Exercise3.GetRoots(1, -3, -4);
             Exercise3.GetRoots(3, -18, 27);
             Exercise3.GetRoots(1, 6, 14);
@@ -29,12 +25,12 @@
             // var partial = new List<int>();
             // const int target = 18;
             // Exercise4.GetSum(numbers, target, partial);
-            // Exercise4.GetAllFiveDigitNumbersSumIsLargerThan18();
-            //
-            // // Exercise 5
-            // int[] myArray = {2, 76, 5, 45, 20, 15, 60, 100};
-            // Exercise5.ManipulateArray(myArray);
-            // Console.WriteLine(myArray);
+            //Exercise4.GetAllFiveDigitNumbersSumIsLargerThan18();
+            
+            // Exercise 5
+            int[] myArray = {2, 76, 5, 45, 20, 15, 60, 100};
+            Exercise5.ManipulateArray(myArray);
+           
             
             // Exercise 6
             Exercise6.GetVector(1, 15, 0.15m);
